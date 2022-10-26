@@ -31,6 +31,7 @@ let makeRouteHandler = (options: Options = {}): Handler => {
           accessKeyId: process.env.S3_UPLOAD_KEY as string,
           secretAccessKey: process.env.S3_UPLOAD_SECRET as string,
         },
+        endpoint: process.env.S3_UPLOAD_ENDPOINT,
         region: process.env.S3_UPLOAD_REGION,
       };
 
