@@ -19,7 +19,7 @@ type Options = {
 };
 
 let makeRouteHandler = (options: Options = {}): Handler => {
-  let route: NextRouteHandler = async function(req, res) {
+  let route: NextRouteHandler = async function (req, res) {
     let missing = missingEnvs();
     if (missing.length > 0) {
       res
@@ -31,6 +31,7 @@ let makeRouteHandler = (options: Options = {}): Handler => {
           accessKeyId: process.env.S3_UPLOAD_KEY as string,
           secretAccessKey: process.env.S3_UPLOAD_SECRET as string,
         },
+        endpoint: process.env.S3_ENDPOINT,
         region: process.env.S3_UPLOAD_REGION,
       };
 
